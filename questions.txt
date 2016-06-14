@@ -1,0 +1,58 @@
+0.  BMP 24 bit supports 16.7 million colors. 32 bit supports over 4 billion
+    GIF supports 256 colors
+    JPEG supports 16 million+
+    PNG supports 16 million+
+    
+1.  GIF supports animation
+
+2.  Lossy compression uses inexact approximations and partial data discarding to represent content. 
+    Essentially some information is lost in the process of compressing and decompressing and
+    it is not fully reversable. Lossless compression on the other hand is fully reversable.
+    This means that no data is lost when the file is compressed and decompressed. 
+
+3.  JPEG
+
+4.  First the system changes the filename's first character in the file's directory entry
+    to signify that the file has been deleted and now the directory entry can be recycled. 
+    Then the system moves all of the file's FAT clusters to the hard drive's list of free clusters.
+    The actual file data is not touched and thus not deleted. 
+
+5.  You could physically destroy the drive. You could use any number of sanitization software.
+    You could also use the secure delete option on most modern machines. 
+    
+6.  stdint.h is a header file in the c standard library that allows programmers to write better code
+    by providing a set of typedefs that specify exact width integers. 
+    
+7.  You exercise more control over memory by using uint8_t etc and make your program more portable as the
+    bit size of such a types are defined and equivalent across all of the platforms, which is not true for int,
+    char, long e.t.c.
+
+8.  uint8_t = 1 byte
+    uint32_t = 4 bytes
+    int32_t = 4 bytes
+    uint16_t = 2 bytes
+    
+9.  BM in ASCII to denote that it is a bitmap file
+
+10. bfsize is the size of the bitfile and bisize is the size of the bitmap info structure which 
+    is included in bfsize.
+    
+11. If biHeight is negative, the origin of the image is in the upper left hand corner and the image is
+    top-down DIB. 
+    
+12. The biBitCount specifies the BMP's color depth
+
+13. fopen might return null in line 37 if the system is out of memory or if you don't have the correct 
+    permissions. (very unlikely with this specific program in CS50 IDE)
+    
+14. Because you're reading the entire size of the file as the previous argument and obviously 
+    you wouldn't want to read in the entire file multiple times.
+    
+15. Padding would be assigned the value 3.
+
+16. fseek allows you to offset the position of the pointer by a specific amount.
+    In this program it is used to skps over padding. 
+    
+17. the pointers current position. 
+
+18. Looks Rick Astley to me!
